@@ -6,7 +6,7 @@ url = Url()
 log_path = 'logs/'
 
 try:
-    url.set_url('http://www.ukstoves.com')
+    url.set_url('http://www.google.com')
     f_name = (FileName()).convert_url_to_filename(url,'txt',True)
 except ValueError as e:
     print(e)
