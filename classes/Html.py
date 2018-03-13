@@ -1,4 +1,4 @@
-from classes.url import Url
+from classes.Url import Url
 import urllib.request
 
 class Html:
@@ -11,9 +11,9 @@ class Html:
     #lets perform a get on the url
     def get(self):
         try:
-            u = urllib.urlopen(self.url.getUrl())
+            u = urllib.urlopen(self.url.get_url())
         except:
-            u = urllib.request.urlopen(self.url.getUrl())
+            u = urllib.request.urlopen(self.url.get_url())
 
         return u.read()
 

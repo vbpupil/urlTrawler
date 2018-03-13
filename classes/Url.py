@@ -2,16 +2,16 @@ import urllib, re
 
 class Url():
     #sets the URL
-    def setUrl(self, url):
-        if self.urlCheck(url):
+    def set_url(self, url):
+        if self.url_check(url):
             self.url=url
 
     #returns the set URL
-    def getUrl(self):
+    def get_url(self):
         return self.url
 
     #verifies if url is present and also that its a valid url
-    def urlCheck(self,url):
+    def url_check(self,url):
         if url:
             if re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', url):
                 return True
