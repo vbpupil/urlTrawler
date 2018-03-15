@@ -1,6 +1,9 @@
-import urllib, re
+import re
 
 class Url():
+    def __init__(self, url):
+        self.set_url(url)
+
     #sets the URL
     def set_url(self, url):
         if self.url_check(url):

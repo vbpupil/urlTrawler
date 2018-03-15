@@ -1,20 +1,28 @@
 from classes.Url import Url
 from classes.Html import Html
 from classes.FileName import FileName
+from classes.FileIO import FileIO
 
-url = Url()
 log_path = 'logs/'
+src_path = 'src/'
 
+
+# read src dir to gather up URLS
 try:
-    url.set_url('http://www.google.com')
-    f_name = (FileName()).convert_url_to_filename(url,'txt',True)
-except ValueError as e:
-    print(e)
+    src_file = FileIO(src_path + 'src_urls.txt')
+    src = src_file.return_list()
 
-html = Html(url)
+    print(src)
 
-try:
-    file = open(log_path + f_name, 'w')
-    file.write(str(html.get()))
-except IOError:
+except:
     pass
+
+# try:
+#     url = Url('http://www.google.com')
+#     f_name = (FileName()).convert_url_to_filename(url,'txt',True)
+# except ValueError as e:
+#     print(e)
+#
+# html = Html(url)
+# file = FileIO(log_path + f_name)
+# file.write(html.get())
