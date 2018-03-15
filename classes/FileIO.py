@@ -1,3 +1,5 @@
+import os
+
 class FileIO:
     def __init__(self, path):
         if isinstance(path, str):
@@ -19,9 +21,9 @@ class FileIO:
         except IOError:
             raise IOError('Problem dealing with file: ' + self.path)
 
-    def return_list(self, splitter='\n'):
+    def return_list(self):
         try:
             src = open(self.path, 'r')
-            return [line.split(splitter) for line in src.readlines()]
+            return [line.rstrip() for line in src.readlines()]
         except IOError:
             raise IOError('Problem dealing with file: ' + self.path)
