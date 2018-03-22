@@ -30,12 +30,29 @@ try:
             #pass into a the htmlparser
             parser = HtmlParse(html.get())
 
-            print(parser.findAll('a', 'href'))
+            #search for
+            tags = {}
+            # tags['a'] = parser.findAll('a', 'href')
+            # tags['img'] = parser.findAll('img', 'src')
+            # tags['audio'] = parser.findAll('audio', 'src')
+            # tags['embed'] = parser.findAll('embed', 'src')
+            # tags['form'] = parser.findAll('form', 'action')
+            # tags['iframe'] = parser.findAll('iframe', 'src')
+            # tags['object'] = parser.findAll('object', 'src')
+            # tags['param'] = parser.findAll('param', 'src')
+            tags['script'] = parser.findAll('script', 'src')
+            # tags['source'] = parser.findAll('source', 'src')
+            # tags['video'] = parser.findAll('video', 'src')
+
+            print(tags)
 
 
+
+            #write html to file
             file = FileIO(log_path + f_name)
             file.write(html.get())
 
+            #increase site count
             site_count += 1
 
     print(str(site_count) + " sites read in", (time.time() - start_time), " seconds")

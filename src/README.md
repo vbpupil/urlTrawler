@@ -1,2 +1,2 @@
 # urlTrawler
-Python based URL trawler
+A Python 3 URL scraper

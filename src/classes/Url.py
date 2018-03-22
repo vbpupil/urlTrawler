@@ -30,3 +30,14 @@ class Url():
                 raise ValueError('Not a valid URL.')
         else:
             raise ValueError('No URL set.')
+
+    def is_local(self, url):
+        if self.netloc in url:
+            return True
+        elif not self.is_absolute(url):
+            return True
+        else:
+            return False
+
+    def is_absolute(url):
+        return bool(urlparse(url).netloc)
