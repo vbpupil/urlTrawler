@@ -7,9 +7,9 @@ class FileIO:
         else:
             raise ValueError('Incorrect TYPE, expecting str')
 
-    def write(self, data):
+    def write(self, data, type='w'):
         try:
-            file = open(self.path, 'w')
+            file = open(self.path, type)
             file.write(str(data))
         except IOError:
             raise IOError('Problem dealing with file: ' + self.path)
